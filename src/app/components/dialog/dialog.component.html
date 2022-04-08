@@ -1,0 +1,84 @@
+<h1 mat-dialog-title>Add Patient</h1>
+<div mat-dialog-content>
+  <form (ngSubmit)="save()"
+        [formGroup]="patientForm">
+    <div class="firstName">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input
+          required
+          formControlName="firstName"
+          matInput placeholder="First Name">
+        <mat-hint>The first name needs to be at least 3 letters long.</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="lastName">
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input
+          required
+          formControlName="lastName"
+          matInput placeholder="Last Name">
+        <mat-hint>The last name needs to be at least 3 letters long.</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="sex">
+      <mat-form-field appearance="fill">
+        <mat-label>Sex</mat-label>
+        <mat-select formControlName="sex" class="selectSex" required>
+          <mat-option value="M">Male</mat-option>
+          <mat-option value="F">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="dateOfBirth">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker"
+               formControlName="dateOfBirth"
+               required
+               max="{{today | date:'yyyy-MM-dd'}}">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="CNP">
+      <mat-form-field appearance="outline">
+        <mat-label>CNP</mat-label>
+        <input
+          type="number"
+          formControlName="cnp"
+          matInput placeholder="CNP">
+        <mat-hint>The CNP has to be 13 digits long.</mat-hint>
+      </mat-form-field>
+    </div>
+
+
+    <div class="phoneNumber">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input
+          type="number"
+          formControlName="phoneNumber"
+          matInput placeholder="Phone Number">
+      </mat-form-field>
+    </div>
+
+
+    <div class="orderNumber">
+      <mat-form-field appearance="outline">
+        <mat-label>Order Number</mat-label>
+        <input disabled
+               value="{{orderNumber}}"
+               matInput placeholder="Order Number">
+      </mat-form-field>
+    </div>
+
+    <button disabled="{{shouldUnlockSaveButton()}}" type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+
+</div>
