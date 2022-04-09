@@ -34,11 +34,11 @@
       </mat-form-field>
     </div>
 
-    <div class="dateOfBirth">
+    <div class="birthDate">
       <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker"
-               formControlName="dateOfBirth"
+               formControlName="birthDate"
                required
                max="{{today | date:'yyyy-MM-dd'}}">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -69,16 +69,16 @@
     </div>
 
 
-    <div class="orderNumber">
+    <div class="id">
       <mat-form-field appearance="outline">
         <mat-label>Order Number</mat-label>
         <input disabled
-               value="{{orderNumber}}"
+               value="{{id}}"
                matInput placeholder="Order Number">
       </mat-form-field>
     </div>
 
-    <button disabled="{{shouldUnlockSaveButton()}}" type="submit" mat-raised-button color="primary">Submit</button>
+    <button disabled="{{shouldUnlockSaveButton()}}" type="submit" mat-raised-button color="primary">Save</button>
   </form>
 
 </div>

@@ -1,0 +1,10 @@
+<div class="content-container">
+  <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+  <span>
+      Are you sure you want to delete this Patient?
+    </span>
+</div>
+<div class="buttons-div">
+  <button mat-raised-button color="primary" [mat-dialog-close]="false">Cancel</button>
+  <button mat-raised-button color="warn"[mat-dialog-close]="true">Delete</button>
+</div>

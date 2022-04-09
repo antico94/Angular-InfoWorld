@@ -1,0 +1,41 @@
+table{
+  width: 100%;
+}
+
+button{
+  margin-left: 15px;
+}
+
+
+#actionsTitle{
+  padding-left: 60px;
+}
+
+
+
+.pageTitle{
+  text-align: center;
+}
+
+
+#editButton:hover{
+  background-color: deepskyblue;
+}
+
+#deleteButton:hover{
+  background-color: red;
+  color: white;
+}
+
+
+table tr, table td{
+  width: 20%;
+}
+
+
+.add-button{
+  display: flex;
+  top: 5%;
+  left: 49%;
+  position: relative;
+}

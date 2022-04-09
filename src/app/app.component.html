@@ -1,1 +1,45 @@
-<button mat-button (click)="openDialog()">Open dialog</button>
+<h1 class="pageTitle">Waiting List</h1>
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8" id="myTable">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <!-- Last Name Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+
+  <!-- Date of birth column-->
+  <ng-container matColumnDef="birthDate">
+    <th mat-header-cell *matHeaderCellDef> Date of birth </th>
+    <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+  </ng-container>
+
+  <!-- Sex Column -->
+  <ng-container matColumnDef="sex">
+    <th mat-header-cell *matHeaderCellDef> Sex </th>
+    <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef id="actionsTitle"> Actions </th>
+    <td mat-cell *matCellDef="let element" class="actionsColumn">
+      <button mat-raised-button id="editButton" (click)="edit(element)">Edit</button>
+      <button mat-raised-button id="deleteButton" (click)="deletePatient(element.id)">Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+    <button class="add-button" mat-raised-button (click)="openDialog()" color="primary">Add new Patient</button>

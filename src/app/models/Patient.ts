@@ -1,9 +1,9 @@
 export class Patient {
   constructor(
-    public orderNumber: number,
+    public id: number,
     public firstName: string,
     public lastName: string,
-    public dateOfBirth: string,
+    public birthDate: string,
     public sex: string,
     public cnp: string,
     public phoneNumber: string) {
